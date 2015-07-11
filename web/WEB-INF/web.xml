@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>Blog</display-name>
+    <welcome-file-list>
+        <welcome-file>articlelist</welcome-file>
+        <!--<welcome-file>edit</welcome-file>-->
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>cn.com.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <!--文章列表-->
+    <servlet>
+        <servlet-name>ArticleListServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ArticleListServlet</servlet-class>
+    </servlet>
+     <!--文章详情-->
+    <servlet>
+        <servlet-name>ArticleDetailServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ArticleDetailServlet</servlet-class>
+    </servlet>
+    <!--编辑添加文章-->
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>cn.com.servlet.EditServlet</servlet-class>
+    </servlet>
+
+    <!--管理文章列表-->
+    <servlet>
+        <servlet-name>ManageListServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ManageListServlet</servlet-class>
+    </servlet>
+    <!--管理文章-->
+    <servlet>
+        <servlet-name>ManageArticlesServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ManageArticlesServlet</servlet-class>
+    </servlet>
+    <!--管理分类-->
+    <servlet>
+        <servlet-name>ManageCategorysServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ManageArticlesServlet</servlet-class>
+    </servlet>
+    <!--管理标签-->
+    <servlet>
+        <servlet-name>ManageTagsServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ManageArticlesServlet</servlet-class>
+    </servlet>
+
+    <!--跳转到编辑添加文章-->
+    <servlet>
+        <servlet-name>ToEditServlet</servlet-name>
+        <servlet-class>cn.com.ui.ToEditServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet映射 -->
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+     <!--文章列表-->
+    <servlet-mapping>
+        <servlet-name>ArticleListServlet</servlet-name>
+        <url-pattern>/articlelist</url-pattern>
+    </servlet-mapping>
+    <!--文章详情-->
+    <servlet-mapping>
+        <servlet-name>ArticleDetailServlet</servlet-name>
+        <url-pattern>/articledetail</url-pattern>
+    </servlet-mapping>
+     <!--编辑文章-->
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+
+     <!--管理文章列表-->
+    <servlet-mapping>
+        <servlet-name>ManageListServlet</servlet-name>
+        <url-pattern>/managelist</url-pattern>
+    </servlet-mapping>
+     <!--管理文章-->
+    <servlet-mapping>
+        <servlet-name>ManageArticlesServlet</servlet-name>
+        <url-pattern>/managearticles</url-pattern>
+    </servlet-mapping>
+     <!--管理分类-->
+    <servlet-mapping>
+        <servlet-name>ManageCategorysServlet</servlet-name>
+        <url-pattern>/managecategorys</url-pattern>
+    </servlet-mapping>
+     <!--管理标签-->
+    <servlet-mapping>
+        <servlet-name>ManageTagsServlet</servlet-name>
+        <url-pattern>/managetags</url-pattern>
+    </servlet-mapping>
+
+    <!--跳转到编辑添加文章-->
+    <servlet-mapping>
+        <servlet-name>ToEditServlet</servlet-name>
+        <url-pattern>/toedit</url-pattern>
+    </servlet-mapping>
+
+    <!--过滤器-->
+    <!--
+    <filter>
+        <filter-name>SystemFilter</filter-name>
+        <filter-class>cn.com.filter.SystemFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SystemFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    -->
+
+    <!--配置session-->
+    <session-config>
+       <!--session超时设置 默认30m-->
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>
