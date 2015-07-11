@@ -8,13 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- 博客内容管理列表 左侧-->
-<c:forEach var="article" items="${articleList}">
-    <div class="col-md-8 panel panel-default" style="height: 195px;padding:0;margin-top:30px;">
+
+<div class="col-md-8 panel panel-default" style="height: 195px;padding:0;margin-top:30px;">
+    <c:forEach var="article" items="${articleList}">
         <!-- //上面文章标题-->
         <div class="col-md-12 panel-heading"><a
                 href=<%=request.getContextPath() + "/articledetail"%>?id=${article.id}><span
                 class="glyphicon glyphicon-star">&nbsp;</span>${article.title}</a></div>
-        <!--  //下面-->
+        <!-- //下面-->
         <div class="col-md-12 panel-body">
             <!-- //下面左边：缩略图-->
             <div class="col-md-2" style="margin:0;padding:0;height:150px;">
@@ -46,5 +47,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</c:forEach>
+    </c:forEach>
+</div>
