@@ -1,7 +1,11 @@
 package cn.com.servlet;
 
 import cn.com.dao.ArticleDao;
+import cn.com.dao.CategoryDao;
+import cn.com.dao.TagDao;
 import cn.com.model.Article;
+import cn.com.model.Category;
+import cn.com.model.Tag;
 import cn.com.model.User;
 import cn.com.utils.Utils;
 
@@ -16,8 +20,8 @@ import java.util.List;
 /**
  * Created by tanhaiyuan on 2015/7/7.
  */
-@WebServlet(name = "ManageArticlesServlet")
-public class ManageArticlesServlet extends HttpServlet {
+@WebServlet(name = "ManageServlet")
+public class ManageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -26,15 +30,26 @@ public class ManageArticlesServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         User user = (User) request.getSession().getAttribute("user");
+
         if (Utils.ObjectIsNull(user)) {
             response.sendRedirect("login.jsp");
         } else {
+            //获取文章
             ArticleDao articleDao = new ArticleDao();
-            List<Article> articleList = articleDao.getArticlesByUserId(user.getId());
+            List<Article> articleList = articleDao.getArticlesByUserId(1);
+            //获取分类
+            CategoryDao categoryDao = new CategoryDao();
+            List<Category> categoryList = categoryDao.getCategorysByUserId(1);
+            //获取 标签
+            TagDao tagDao = new TagDao();
+            List<Tag> tagList = tagDao.getTagsByUserId(1);
 
             request.setAttribute("user", user);
             request.setAttribute("articleList", articleList);
-            request.getRequestDispatcher("managearticles.jsp").forward(request, response);
+            request.setAttribute("categoryList", categoryList);
+            request.setAttribute("tagList", tagList);
+
+            request.getRequestDispatcher("manage.jsp").forward(request, response);
         }
     }
 }

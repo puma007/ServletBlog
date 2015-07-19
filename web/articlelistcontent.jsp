@@ -23,9 +23,7 @@
             <!-- //下面右边-->
             <div class="col-md-10" style="padding:0;">
                 <!-- //下面右边上面：文章简短说明-->
-                <div class="col-md-12"><p>公司第一年我们也没有什么战略，全是
-                    抢市场老大的意识，在员经过思考换算对市场预测的分析后， 在第二年我们小组的成员经过思考换算对市场预测的分析后，
-                    在第二年我们小组的成员经过思考换算对市场预测的分析后， 此，</p></div>
+                <div class="col-md-12"><p>${article.content}</p></div>
                 <!--//下面右边下面： 时间等信息-->
                 <div class="col-md-12" style="margin:0;padding:0;">
                     <div class="col-md-2"><span class="glyphicon glyphicon-folder-open"

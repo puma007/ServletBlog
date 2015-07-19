@@ -25,14 +25,13 @@
         <div class="row">
             <!-- 编辑框 左侧-->
             <div class="col-md-8" style="display:block">
-                <form action="edit" class="form-horizontal" method="post">
+                <form action=<%=request.getContextPath() + "/save"%>?id=${article.id} class="form-horizontal" method="post">
                     <!--文章标题-->
 
                     <div class="form-group" style="margin-top:30px">
                         <label class="control-label" style="float:left">标题</label>
-
                         <div class="col-md-11">
-                            <input type="text" class="form-control" id="title" placeholder="输入文章标题...">
+                            <input type="text" class="form-control" name="title" placeholder="输入文章标题..." value="${article.title}">
                         </div>
                     </div>
                     <!--文章分类-->
@@ -40,7 +39,7 @@
                         <label class="control-label" style="float:left">分类</label>
 
                         <div class="col-md-5">
-                            <select class="form-control">
+                            <select class="form-control" name="selectCategory">
                                 <c:forEach var="category" items="${categoryList}">
                                     <option>${category.name}</option>
                                 </c:forEach>
@@ -49,12 +48,11 @@
                     </div>
                     <!--文章内容-->
                     <div class="form-group">
-                    	<textarea rows="20" style="width:730px" class="form-control">
-                    	</textarea>
+                    	<textarea rows="20" style="width:730px" class="form-control" name="content">${article.content}</textarea>
                     </div>
                     <!--发布按钮-->
                     <div class="form-group" style="width:730px">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">发布</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">发布</button>
                     </div>
                 </form>
             </div>

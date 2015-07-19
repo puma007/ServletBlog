@@ -25,36 +25,36 @@
     </servlet>
     <!--编辑添加文章-->
     <servlet>
-        <servlet-name>EditServlet</servlet-name>
-        <servlet-class>cn.com.servlet.EditServlet</servlet-class>
+        <servlet-name>EditArticleServlet</servlet-name>
+        <servlet-class>cn.com.servlet.EditArticleServlet</servlet-class>
+    </servlet>
+    <!--保存文章-->
+    <servlet>
+        <servlet-name>SaveArticleServlet</servlet-name>
+        <servlet-class>cn.com.servlet.SaveArticleServlet</servlet-class>
     </servlet>
 
-    <!--管理文章列表-->
+    <!--管理文章-->
+    <servlet>
+        <servlet-name>ManageServlet</servlet-name>
+        <servlet-class>cn.com.servlet.ManageServlet</servlet-class>
+    </servlet>
+    <!--文章列表管理-->
     <servlet>
         <servlet-name>ManageListServlet</servlet-name>
         <servlet-class>cn.com.servlet.ManageListServlet</servlet-class>
     </servlet>
-    <!--管理文章-->
-    <servlet>
-        <servlet-name>ManageArticlesServlet</servlet-name>
-        <servlet-class>cn.com.servlet.ManageArticlesServlet</servlet-class>
-    </servlet>
     <!--管理分类-->
     <servlet>
         <servlet-name>ManageCategorysServlet</servlet-name>
-        <servlet-class>cn.com.servlet.ManageArticlesServlet</servlet-class>
+        <servlet-class>cn.com.servlet.ManageServlet</servlet-class>
     </servlet>
     <!--管理标签-->
     <servlet>
         <servlet-name>ManageTagsServlet</servlet-name>
-        <servlet-class>cn.com.servlet.ManageArticlesServlet</servlet-class>
+        <servlet-class>cn.com.servlet.ManageServlet</servlet-class>
     </servlet>
 
-    <!--跳转到编辑添加文章-->
-    <servlet>
-        <servlet-name>ToEditServlet</servlet-name>
-        <servlet-class>cn.com.ui.ToEditServlet</servlet-class>
-    </servlet>
 
     <!-- Servlet映射 -->
     <servlet-mapping>
@@ -71,21 +71,25 @@
         <servlet-name>ArticleDetailServlet</servlet-name>
         <url-pattern>/articledetail</url-pattern>
     </servlet-mapping>
-     <!--编辑文章-->
+     <!--添加编辑文章-->
     <servlet-mapping>
-        <servlet-name>EditServlet</servlet-name>
+        <servlet-name>EditArticleServlet</servlet-name>
         <url-pattern>/edit</url-pattern>
     </servlet-mapping>
-
-     <!--管理文章列表-->
+     <!--保存文章-->
     <servlet-mapping>
-        <servlet-name>ManageListServlet</servlet-name>
-        <url-pattern>/managelist</url-pattern>
+        <servlet-name>SaveArticleServlet</servlet-name>
+        <url-pattern>/save</url-pattern>
     </servlet-mapping>
      <!--管理文章-->
     <servlet-mapping>
-        <servlet-name>ManageArticlesServlet</servlet-name>
-        <url-pattern>/managearticles</url-pattern>
+        <servlet-name>ManageServlet</servlet-name>
+        <url-pattern>/manage</url-pattern>
+    </servlet-mapping>
+     <!--文章列表管理-->
+    <servlet-mapping>
+        <servlet-name>ManageListServlet</servlet-name>
+        <url-pattern>/managelist</url-pattern>
     </servlet-mapping>
      <!--管理分类-->
     <servlet-mapping>
@@ -98,11 +102,6 @@
         <url-pattern>/managetags</url-pattern>
     </servlet-mapping>
 
-    <!--跳转到编辑添加文章-->
-    <servlet-mapping>
-        <servlet-name>ToEditServlet</servlet-name>
-        <url-pattern>/toedit</url-pattern>
-    </servlet-mapping>
 
     <!--过滤器-->
     <!--

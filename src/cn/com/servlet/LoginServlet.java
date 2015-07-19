@@ -1,11 +1,9 @@
 package cn.com.servlet;
 
 import cn.com.dao.UserDao;
-import cn.com.filter.SystemFilter;
 import cn.com.model.User;
 import cn.com.utils.Utils;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,8 +29,9 @@ public class LoginServlet extends HttpServlet {
             System.out.println("存在用户");
             // 用户非空  将用户对象放入session中
             request.getSession().setAttribute("user", user);
-            request.getRequestDispatcher("managearticles").forward(request, response);
+            request.getRequestDispatcher("manage").forward(request, response);
         } else {
+            request.setAttribute("notmatch", "true");
             response.sendRedirect("login.jsp");
         }
     }

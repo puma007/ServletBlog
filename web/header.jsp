@@ -27,7 +27,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a herf="baidu.com">订阅</a></li>
-                <li><a href=<%=request.getContextPath() + "/managelist"%>>管理</a></li>
+                <li><a href=<%=request.getContextPath() + "/manage"%>>管理</a></li>
+                <li><a href=<%=request.getContextPath() + "/edit"%>>添加</a></li>
             </ul>
         </div>
     </div>

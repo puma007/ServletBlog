@@ -283,17 +283,16 @@ public class ArticleDao {
 
     public boolean update(Article article) {
         Connection conn = DBManager.getConnection();
-        String sql = "update t_article set title=?, content=?, viewcount=?, userid=?, categoryid=?, createdate=?, modifydate=? where id=?";
+        String sql = "update t_article set title=?, content=?, viewcount=?, categoryid=?, createdate=?, modifydate=? where id=?";
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, article.getTitle());
             ps.setString(2, article.getContent());
             ps.setInt(3, article.getViewcount());
-            ps.setInt(4, 1);
-            ps.setInt(5, article.getCategory().getId());
-            ps.setDate(6, DateUtil.UtilToSqlDate(article.getCreatedate()));
-            ps.setDate(7, DateUtil.UtilToSqlDate(article.getModifydate()));
-            ps.setInt(8, article.getId());
+            ps.setInt(4, article.getCategory().getId());
+            ps.setDate(5, DateUtil.UtilToSqlDate(article.getCreatedate()));
+            ps.setDate(6, DateUtil.UtilToSqlDate(article.getModifydate()));
+            ps.setInt(7, article.getId());
             //插入标签
             //TODO: 插入标签
 

@@ -1,8 +1,6 @@
 package cn.com.dao;
 
 
-import javax.swing.text.StyledEditorKit;
-import java.sql.Statement;
 import java.sql.*;
 
 /**
@@ -74,10 +72,10 @@ public class BaseDao {
 
     /**
      * 删除对象
-     * @param ob
+     * @param id
      * @return
      */
-    public boolean delete(Object ob){
+    public boolean delete(int id){
         return true;
     }
 
